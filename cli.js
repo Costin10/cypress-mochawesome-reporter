@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
+import { Command } from 'commander';
 const fse = require('fs-extra');
 const { setSimpleConfig } = require('./lib/config');
 const { log, initDebugLog, debugLog } = require('./lib/logger');

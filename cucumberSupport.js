@@ -5,17 +5,14 @@ const consts = require('./lib/consts');
  * Store the Cucumber source in the context for later usage
  */
 Before(({ pickle, gherkinDocument }) => {
-    // (poor-man deep copy)
-    const gherkinDocumentWithSingleScenario = JSON.parse(JSON.stringify({
+    const gherkinDocumentWithSingleScenario = {
         ...gherkinDocument,
         feature: {
             ...gherkinDocument.feature,
-            // keep only the scenario corresponding to the current pickle
             children: gherkinDocument.feature.children.filter(f => f.scenario?.id === pickle.astNodeIds[0]),
         },
-    }));
+    };
 
-    // for scenario outlines, only keep the corresponding example
     const scenario = gherkinDocumentWithSingleScenario.feature.children[0].scenario;
     if (scenario.examples.length) {
         const example = scenario.examples[0];

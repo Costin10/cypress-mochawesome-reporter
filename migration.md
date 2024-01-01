@@ -14,4 +14,4 @@
 
 4. Remove `generate-mochawesome-report` from your `package.json`
 
-    Since this version automatically generate the HTML at the end of a test run, the CLI have no use anymore
+    Since this version automatically generates the HTML at the end of a test run, the CLI has no use anymore

@@ -1,5 +1,5 @@
-/// <reference types="cypress" />
-const addContext = require('mochawesome/addContext');
+import addContext from 'mochawesome/addContext';
+import { Cypress } from 'cypress';
 
 const screenshotsFolder = Cypress.config('screenshotsFolder');
 

@@ -42,7 +42,8 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.2.0",
     "cypress": "^13.1.0",
-    "lerna": "^7.1.4"
+    "lerna": "^7.1.4",
+    "mochawesome-merge": "^4.2.1"
   },
   "peerDependencies": {
     "cypress": ">=6.2.0"

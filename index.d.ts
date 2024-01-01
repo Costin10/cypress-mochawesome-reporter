@@ -1,14 +1,14 @@
-﻿declare namespace Cypress {
-    interface Chainable {
-        /**
-         * Manually add data to the mochawesome report.
-         * @param context string or an object confining to structure {title: 'expected output', value: {a: 1, b: '2', c: 'd'}
-         */
-        addTestContext(context: TestContext): void;
+﻿declare global {
+    namespace Cypress {
+        interface Chainable {
+            addTestContext(context: TestContext): Chainable<void>;
+        }
+        interface TestContextObject {
+            title: string;
+            value: any;
+        }
+        type TestContext = string | TestContextObject;
     }
-    interface TestContextObject {
-        title: string;
-        value: any;
-    }
-    type TestContext = string | TestContextObject;
 }
+
+export {}; // Fix "Cannot redeclare block-scoped variable" error
